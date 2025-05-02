@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Pseudo-class and Pseudo-element Tasks</title>
+  <style>
+
+    .hover-btn:hover {
+      background-color: lightgreen;
+    }
+
+    input:focus {
+      border: 2px solid royalblue;
+      outline: none;
+    }
+
+    li:first-child {
+      color: red;
+    }
+
+    h2::before {
+      content: "🔹 ";
+    }
+
+    p::first-letter {
+      font-size: 200%;
+      color: darkorange;
+    }
+
+    li::marker {
+      content: "➤ ";
+      color: purple;
+    }
+
+    .shine-btn {
+      position: relative;
+      padding: 12px 30px;
+      background: #3498db;
+      color: white;
+      border: none;
+      overflow: hidden;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .shine-btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: skewX(-20deg);
+    }
+
+    .shine-btn:hover::after {
+      animation: slide-shine 0.75s linear forwards;
+    }
+
+    @keyframes slide-shine {
+      to { left: 125%; }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <h2>Task 1: Hover Button</h2>
+    <button class="hover-btn">Hover Me</button>
+  </section>
+
+  <section>
+    <h2>Task 2: Focus Input</h2>
+    <input type="text" placeholder="Focus me">
+  </section>
+
+  <section>
+    <h2>Task 3: First Child in List</h2>
+    <ul>
+      <li>First item</li>
+      <li>Second item</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Introduction Heading</h2>
+  </section>
+
+  <section>
+    <h2>Task 5: First Letter Styling</h2>
+    <p>Learning CSS is fun and powerful.</p>
+  </section>
+
+  
+  <section>
+    <h2>Task 6: Custom List Bullets</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+    </ul>
+  </section>
+
+  
+  <section>
+    <h2>Task 7: Shine Button</h2>
+    <button class="shine-btn">Click Me</button>
+  </section>
+
+</body>
+</html>
